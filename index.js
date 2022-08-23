@@ -5,6 +5,9 @@ const dotenv = require("dotenv");
 
 //routes
 const authRoute = require("./routes/auth");
+const userRoute = require("./routes/users");
+const movieRoute = require("./routes/movies");
+const listRoute = require("./routes/lists");
 
 //dotenv configuration
 dotenv.config();
@@ -22,6 +25,9 @@ app.use(express.json());
 
 //using routes
 app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
+app.use("/api/movie", movieRoute);
+app.use("/api/lists", listRoute);
 
 //listening port
 app.listen(8800, () => {
